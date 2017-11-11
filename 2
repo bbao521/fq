@@ -4,7 +4,7 @@ LOGTIME=$(date "+%m-%d %H:%M:%S")
 
 echo " 检测安装脚本版本 "
 if [ ! -f /tmp/hsfq_script_up.sh ]; then
-	wget --no-check-certificate https://raw.githubusercontent.com/bbao521/fq/master/1 -O /tmp/hsfq_script_up.sh;chmod 775 /tmp/hsfq_script_up.sh
+	wget --no-check-certificate https://raw.githubusercontent.com/bbao521/fq/master/hsfq_script.sh -O /tmp/hsfq_script_up.sh;chmod 775 /tmp/hsfq_script_up.sh
 	cat /tmp/hsfq_script_up.sh /etc/storage/dnsmasq.d/hsfq_script.sh | awk '{ print$0}' | sort | uniq -u > /tmp/hsfq_script_up.txt && sleep 2
 	if [ ! -s "/tmp/hsfq_script_up.txt" ]; then
 		echo -e "\e[1;33m HSFQ 安装脚本已为最新,无需更新.\e[0m\n" && rm -f /tmp/hsfq_script_up.sh && rm -f /tmp/hsfq_script_up.txt
