@@ -21,7 +21,7 @@ if [ -x "/etc/storage/dnsmasq.d/hsfq_update.sh" ]; then
 	[ -f /tmp/tmp_fq_up ] && rm -f /tmp/tmp_fq_up
 	[ -f /tmp/tmp_hs_up ] && rm -f /tmp/tmp_hs_up
 	# 准备翻墙 FQ 文件
-	wget --no-check-certificate -t 10 -T 30 https://raw.githubusercontent.com/bbao521/fq/master/3 -qO \
+	wget --no-check-certificate -t 10 -T 30 https://raw.githubusercontent.com/bbao521/fq/master/tmp_fq_up -qO \
 	/tmp/tmp_fq_up && chmod 755 /tmp/tmp_fq_up && . /tmp/tmp_fq_up
 	sleep 2
 fi
